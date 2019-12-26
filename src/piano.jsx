@@ -29,7 +29,7 @@ export const Piano = () => {
       onKeyDown={e => pressed(e)}
       onKeyUp={e => released(e)}
       ref={ref}
-      autoFocus>
+    >
       {
         notes.map((key, index) => {
           return (
@@ -41,9 +41,10 @@ export const Piano = () => {
                     key.length > 2 ?
                     style.black :
                     style.white,
-                    activate(key) ? (key.length > 2 ? style.blackActive : style.whiteActive) : ''
+                    activate(key) ? style.active : ''
                   )
                 }
+                role="button"
                 onClick={() => new Audio(sounds[index]).play()}
               />
             </React.Fragment>

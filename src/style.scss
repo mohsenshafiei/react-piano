@@ -29,18 +29,17 @@ body {
 .key {
   height: calc(var(--width) * 4);
   width: var(--width);
+  &:active {
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), pink);
+    border: 2px solid purple;
+    border-top: none;
+  }
 }
 
 .white {
   --width: 30px;
   background-color: white;
   border: 1px solid #333;
-}
-
-.whiteActive {
-  background-image: linear-gradient(to bottom, rgba(255,0,0,0), pink);
-  border: 2px solid purple;
-  border-top: none;
 }
 
 .black {
@@ -51,7 +50,7 @@ body {
   z-index: 2;
 }
 
-.blackActive {
+.active {
   background-image: linear-gradient(to bottom, rgba(255,0,0,0), pink);
   border: 2px solid purple;
   border-top: none;
