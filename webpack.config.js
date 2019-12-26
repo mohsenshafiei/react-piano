@@ -17,7 +17,7 @@ module.exports = {
         options: { presets: ["@babel/env"] }
       },
       {
-        test: /\.(mp3)$/i,
+        test: /\.(mp3|jpg)$/i,
         use: [
           {
             loader: 'file-loader',
