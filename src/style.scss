@@ -12,6 +12,9 @@ body {
 }
 
 .piano {
+  border: none;
+  box-shadow: none;
+  outline: none;
   display: flex;
   position: absolute;
   bottom: 0;
