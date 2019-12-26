@@ -3,13 +3,33 @@ import style from './style.scss';
 import cx from 'classnames';
 import { notes, notesSounds, keymapSounds} from './notes';
 const sounds = notesSounds.map((key, index) => notesSounds[index]);
+
 export const Piano = () => {
+  const [obj, setObj] = React.useState({});
+  const ref = React.useRef(null);
+  React.useEffect(() => ref.current.focus() , []);
+
+  const activate = (key) => Object.keys(obj).some((objectKey) => obj[objectKey] && keymapSounds[objectKey].key === key)
+
+  const released = ({keyCode}) => setObj({ [keyCode]: false})
+
   const pressed = ({ keyCode }) => {
-    new Audio(keymapSounds[keyCode]).play();
-    console.log(keyCode);
+    if (!obj[keyCode]) {
+      const audio = new Audio(keymapSounds[keyCode].sound);
+      audio.play();
+      setObj({ [keyCode]: true})
+    }
   }
+
   return (
-    <div className={style.piano} role="button" tabIndex="0" onKeyDown={e => pressed(e)} autoFocus>
+    <div
+      className={style.piano}
+      role="button"
+      tabIndex="0"
+      onKeyDown={e => pressed(e)}
+      onKeyUp={e => released(e)}
+      ref={ref}
+      autoFocus>
       {
         notes.map((key, index) => {
           return (
@@ -20,7 +40,8 @@ export const Piano = () => {
                   cx(style.key,
                     key.length > 2 ?
                     style.black :
-                    style.white
+                    style.white,
+                    activate(key) ? (key.length > 2 ? style.blackActive : style.whiteActive) : ''
                   )
                 }
                 onClick={() => new Audio(sounds[index]).play()}
