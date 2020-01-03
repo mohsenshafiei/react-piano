@@ -11,9 +11,8 @@ export const Piano = () => {
 
   const activate = (key) => Object.keys(obj).some((objectKey) => obj[objectKey] && keymapSounds[objectKey].key === key)
 
-  const released = ({keyCode}) => {
-    setObj({ ...obj, [keyCode]: false})
-  }
+  const released = ({keyCode}) => setObj({ ...obj, [keyCode]: false})
+
   const pressed = ({ keyCode }) => {
     if (!obj[keyCode]) {
       const audio = new Audio(keymapSounds[keyCode].sound);
