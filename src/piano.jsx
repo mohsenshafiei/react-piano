@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { notes, notesSounds, keymapSounds} from './notes';
 const sounds = notesSounds.map((key, index) => notesSounds[index]);
 
-export const Piano = () => {
+export const Piano = (props) => {
   const [obj, setObj] = React.useState({});
   const ref = React.useRef(null);
   React.useEffect(() => ref.current.focus() , []);

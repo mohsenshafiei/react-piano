@@ -7,14 +7,73 @@ body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.titleContainer {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title {
-  font-family: sans-serif;
+  font-family: 'The blacklist';
   color: white;
+  font-size: 136px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid white;
+}
+
+.motto {
+  margin-top: 22px;
+  font-family: 'DK Lemon Yellow Sun';
+  color: yellow;
+  font-size: 68px;
+}
+
+.startButton {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+  font-family: 'DK Lemon Yellow Sun';
+  color: white;
+  border: 2px solid white;
   font-size: 32px;
+  padding: 18px 32px;
+  font-weight: 900;
+  border-radius: 35px;
+  &:hover {
+    background-color: yellow;
+		color: rgb(56, 77, 91);
+    border: 2px solid yellow;
+	}
+}
+
+.teacherContainer {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.noteToPlay {
+  font-family: 'DK Lemon Yellow Sun';
+  color: white;
+  border-bottom: 1px solid white;
+  font-size: 72px;
+}
+
+.noteWePlay {
+  font-family: 'DK Lemon Yellow Sun';
+  color: white;
+  font-size: 72px;
 }
 
 .piano {
