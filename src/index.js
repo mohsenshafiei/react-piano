@@ -4,11 +4,13 @@ import { Piano } from './piano';
 import { Title } from './title';
 import { Controller } from './controller';
 import { Teacher } from './teacher';
+import { Navbar } from './navbar';
 
 const App = () => {
   const [start, setStart] = React.useState(false);
   return (
     <div>
+      <Navbar />
       {
         !start ?
         <>

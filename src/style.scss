@@ -120,3 +120,44 @@ body {
   border: 2px solid purple;
   border-top: none;
 }
+
+.navbar {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 64px;
+  color: white;
+  font-family: 'DK Lemon Yellow Sun';
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.navbarRight {
+  width: 25%;
+  direction: ltr;
+  text-align: right;
+  float: right;
+  font-size: 32px;
+  font-weight: 900;
+
+}
+
+.navbarLeft {
+  width: 75%;
+  direction: rtl;
+  text-align: left;
+  float: left;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.link {
+  margin-left: 20px;
+  padding-bottom: 8px;
+  &:hover {
+    color: yellow;
+    border-bottom: 2px solid yellow;
+  }
+}
