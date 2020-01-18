@@ -1,12 +1,16 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WebpackShower = require('webpack-shower');
 
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
   node: {
     fs: "empty"
+  },
+  stats: {
+    all: false
   },
   module: {
     rules: [
@@ -55,6 +59,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'My App',
       template: './src/index.html',
+    }),
+    new WebpackShower({
+      assetsToFilter: [
+        '.mp3',
+      ],
     })
   ]
 };
